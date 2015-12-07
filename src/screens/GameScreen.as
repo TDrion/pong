@@ -102,13 +102,13 @@ package screens
 		
 		private function checkScore():void 
 		{
-			if (scoreboard.player2 >= 10)
+			if (scoreboard.player2 >= 11)
 			{
 				destroy();
 				dispatchEvent(new Event(GAME_OVER));
 				
 			}
-			if (scoreboard.player1 >= 10)
+			if (scoreboard.player1 >= 11)
 			{
 				destroy();
 				dispatchEvent(new Event(Win));
