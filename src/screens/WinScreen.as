@@ -11,12 +11,12 @@ package screens
 	 * ...
 	 * @author Tim Drion
 	 */
-	public class GameOverScreen extends Screen 
+	public class WinScreen extends Screen 
 	{
 		private var title:TextField;
 		private var timer:Timer;
-		public static const RESET:String = "reset";
-		public function GameOverScreen() 
+		public static const RESET2:String = "reset2";
+		public function WinScreen() 
 		{
 			this.addEventListener(Event.ADDED_TO_STAGE, init);
 			
@@ -28,7 +28,7 @@ package screens
 						
 			title = new TextField();
 			title.embedFonts = true;
-			title.text = "You Loser Try Again!";
+			title.text = "You Won!";
 			title.autoSize = TextFieldAutoSize.CENTER;			
 			title.setTextFormat(textFormat);		
 			
@@ -56,14 +56,14 @@ package screens
 			if (e == null)
 			{
 				stage.removeEventListener(KeyboardEvent.KEY_UP, reset);
-				dispatchEvent(new Event(RESET));
+				dispatchEvent(new Event(RESET2));
 				return;
 			}
 			if (e.keyCode == 32) {				
 				stage.removeEventListener(KeyboardEvent.KEY_UP, reset);				
 				timer.removeEventListener(TimerEvent.TIMER_COMPLETE, onComplete);
 				timer.stop();
-				dispatchEvent(new Event(RESET));
+				dispatchEvent(new Event(RESET2));
 				
 			}
 		

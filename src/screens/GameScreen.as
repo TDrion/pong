@@ -21,7 +21,8 @@ package screens
 		private var balls:Array = [];
 		private var paddles:Array = [];
 		private var scoreboard:Scoreboard;
-		static public const GAME_OVER:String = "game over";
+		static public const GAME_OVER:String = "game over!";
+		static public const Win:String = "You won the game!";
 		static public const BALL_BOUNCE:String = "ballBounce";
 		public function GameScreen() 
 		{
@@ -101,13 +102,17 @@ package screens
 		
 		private function checkScore():void 
 		{
-			if (scoreboard.player1 >= 10 || scoreboard.player2 >= 10)
+			if (scoreboard.player2 >= 10)
 			{
 				destroy();
 				dispatchEvent(new Event(GAME_OVER));
 				
 			}
-			
+			if (scoreboard.player1 >= 10)
+			{
+				destroy();
+				dispatchEvent(new Event(Win));
+			}
 		}
 			
 		private function destroy():void
