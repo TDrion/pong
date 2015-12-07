@@ -4,7 +4,7 @@ package actors
 	import flash.events.Event;
 	/**
 	 * ...
-	 * @author erwin henraat
+	 * @author Tim Drion
 	 */
 	public class Player extends Paddle 
 	{
@@ -25,11 +25,11 @@ package actors
 		{
 			if (controller.up)
 			{
-				speed = -15;
+				speed = -20;
 			}
 			else if(controller.down)
 			{
-				speed = 15;
+				speed = 20;
 			}else
 			{
 				if (speed > 0) speed--;

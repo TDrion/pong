@@ -4,7 +4,7 @@ package actors
 	
 	/**
 	 * ...
-	 * @author erwin henraat
+	 * @author Tim Drion
 	 */
 	public class AI extends Paddle 
 	{
